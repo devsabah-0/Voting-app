@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Polls and Participants</title>
+    <link rel="stylesheet" href="styles/manage.css">
+</head>
+<body class="manage-page">
+    <div class="container">
+        <h1>Manage Polls and Participants</h1>
+        <form id="poll-form">
+            <input type="text" id="poll-name" name="poll-name" placeholder="Poll Name" required>
+            <button type="submit">Create Poll</button>
+        </form>
+        <div class="poll-controls">
+            <select id="poll-selector">
+                <option value="">Select a poll to manage</option>
+            </select>
+            <button id="toggle-voting" class="toggle-button" style="display: none;">Vote Start</button>
+        </div>
+        <div id="participant-management" style="display: none;">
+            <form id="participant-form" enctype="multipart/form-data">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="text" name="designation" placeholder="Designation" required>
+                <input type="text" name="department" placeholder="Department" required>
+                <textarea name="review" placeholder="Review" required></textarea>
+                <input type="file" name="image" accept=".svg" required>
+                <button type="submit">Add Participant</button>
+            </form>
+            <ul id="participant-list"></ul>
+        </div>
+    </div>
+    <script src="scripts/manage.js"></script>
+</body>
+</html>
